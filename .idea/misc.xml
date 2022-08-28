@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/font/font.xml" value="0.26481481481481484" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/font/gont.xml" value="0.22616033755274262" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/layout/activity_main.xml" value="0.22146739130434784" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/layout/fragment_market.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/layout/fragment_watch_list.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2453125" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
