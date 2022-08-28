@@ -3,12 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/drawable/active_button.xml" value="0.143" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/drawable/ic_star.xml" value="0.143" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/drawable/ic_star_outline.xml" value="0.143" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/drawable/ic_stats.xml" value="0.143" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/drawable/market_content_bg.xml" value="0.121" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/drawable/search_field_bg.xml" value="0.143" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/drawable/top_gainers_bg.xml" value="0.121" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/drawable/top_losers_bg.xml" value="0.121" />
         <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/font/font.xml" value="0.26481481481481484" />
         <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/font/gont.xml" value="0.22616033755274262" />
         <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/layout/activity_main.xml" value="0.22146739130434784" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/layout/currency_item_layout.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/layout/fragment_details.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/layout/fragment_market.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/layout/fragment_top_loss_gain.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/layout/fragment_watch_list.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/layout/top_currency_layout.xml" value="0.4" />
         <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2453125" />
       </map>
     </option>
