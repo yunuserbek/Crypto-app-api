@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/2u/.gradle/caches/transforms-3/27066a20aef4004116056eb205cd2766/transformed/material-1.6.1/res/drawable/design_ic_visibility_off.xml" value="0.143" />
         <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/drawable/active_button.xml" value="0.143" />
+        <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/drawable/ic_caret_up.xml" value="0.143" />
         <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/drawable/ic_star.xml" value="0.143" />
         <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/drawable/ic_star_outline.xml" value="0.143" />
         <entry key="..\:/Users/2u/AndroidStudioProjects/Cryptoappapi/app/src/main/res/drawable/ic_stats.xml" value="0.143" />
