@@ -8,7 +8,7 @@ data class Quote(
     val marketCapByTotalSupply: Double?,
     val name: String?,
     val percentChange1h: Double?,
-    val percentChange24h: Double?,
+    val percentChange24h: Double,
     val percentChange30d: Double?,
     val percentChange60d: Double?,
     val percentChange7d: Double?,
