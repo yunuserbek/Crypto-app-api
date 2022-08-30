@@ -18,12 +18,20 @@
         android:id="@+id/marketFragment2"
         android:name="com.example.cryptoappapi.fragment.MarketFragment"
         android:label="fragment_market"
-        tools:layout="@layout/fragment_market" />
+        tools:layout="@layout/fragment_market" >
+        <action
+            android:id="@+id/action_marketFragment2_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/watchlistFragment"
         android:name="com.example.cryptoappapi.fragment.WatchListFragment"
         android:label="fragment_watch_list"
-        tools:layout="@layout/fragment_watch_list" />
+        tools:layout="@layout/fragment_watch_list" >
+        <action
+            android:id="@+id/action_watchlistFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.example.cryptoappapi.fragment.DetailsFragment"

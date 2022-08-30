@@ -10,9 +10,10 @@ import com.bumptech.glide.Glide
 import com.example.cryptoappapi.R
 import com.example.cryptoappapi.databinding.CurrencyItemLayoutBinding
 import com.example.cryptoappapi.fragment.HomeFragmentDirections
+import com.example.cryptoappapi.fragment.MarketFragmentDirections
 import com.example.cryptoappapi.models.CryptoCurrency
 
-class MarketAdapter(var context: Context, var list: List<CryptoCurrency>) :
+class MarketAdapter(var context: Context, var list: List<CryptoCurrency>, var type: String) :
     RecyclerView.Adapter<MarketAdapter.MarketViewHolder>() {
     inner class MarketViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var binding = CurrencyItemLayoutBinding.bind(view)
@@ -22,6 +23,11 @@ class MarketAdapter(var context: Context, var list: List<CryptoCurrency>) :
         return MarketViewHolder(
             LayoutInflater.from(context).inflate(R.layout.currency_item_layout, parent, false)
         )
+    }
+
+    fun updateData(dataItem: List<CryptoCurrency>) {
+        list = dataItem
+        notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: MarketViewHolder, position: Int) {
@@ -38,7 +44,8 @@ class MarketAdapter(var context: Context, var list: List<CryptoCurrency>) :
             .into(holder.binding.currencyChartImageView)
 
 
-        holder.binding.currencyPriceTextView.text = "${String.format("$%.02f",item.quotes[0].price)}"
+        holder.binding.currencyPriceTextView.text =
+            "${String.format("$%.02f", item.quotes[0].price)}"
         if (item.quotes!![0]?.percentChange24h!! > 0) {
             holder.binding.currencyChangeTextView.setTextColor(context.resources.getColor(R.color.green))
             holder.binding.currencyChangeTextView.text =
@@ -49,12 +56,20 @@ class MarketAdapter(var context: Context, var list: List<CryptoCurrency>) :
                 "${String.format("%.02f", item.quotes[0]!!.percentChange24h)} %"
         }
         holder.itemView.setOnClickListener {
-            Navigation.findNavController(it).navigate(HomeFragmentDirections.actionHomeFragment2ToDetailsFragment(item))
+            if (type == "home") {
+                Navigation.findNavController(it)
+                    .navigate(HomeFragmentDirections.actionHomeFragment2ToDetailsFragment(item))
+            }else if (type == "market"){
+                Navigation.findNavController(it).navigate(
+                    MarketFragmentDirections.actionMarketFragment2ToDetailsFragment(item)
+                )
+
+            }
         }
     }
 
 
-override fun getItemCount(): Int {
-    return list.size
-}
+    override fun getItemCount(): Int {
+        return list.size
+    }
 }
