@@ -1,5 +1,6 @@
 package com.example.cryptoappapi.fragment
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,8 @@ import com.bumptech.glide.Glide
 import com.example.cryptoappapi.R
 import com.example.cryptoappapi.databinding.FragmentDetailsBinding
 import com.example.cryptoappapi.models.CryptoCurrency
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 class DetailsFragment : Fragment() {
     lateinit var binding: FragmentDetailsBinding
@@ -25,7 +28,61 @@ class DetailsFragment : Fragment() {
         setUpDetails(data)
         loadChart(data)
         setButtonOnClick(data)
+        addWatchList(data)
         return binding.root
+    }
+
+    var watchList: ArrayList<String>? = null
+    var watchListIsChecked = false
+
+
+    private fun addWatchList(data: CryptoCurrency) {
+
+        readData()
+        watchListIsChecked = if (watchList!!.contains(data.symbol)){
+            binding.addWatchlistButton.setImageResource(R.drawable.ic_star)
+            true
+        }else{
+            binding.addWatchlistButton.setImageResource(R.drawable.ic_star_outline)
+            false
+        }
+        binding.addWatchlistButton.setOnClickListener{
+            watchListIsChecked=
+                if (!watchListIsChecked){
+
+                    if (!watchList!!.contains(data.symbol)){
+                        watchList!!.add(data.symbol)
+                    }
+                    storeData()
+                    binding.addWatchlistButton.setImageResource(R.drawable.ic_star)
+
+                    true
+                }else{
+                    binding.addWatchlistButton.setImageResource(R.drawable.ic_star_outline)
+                    watchList!!.remove(data.symbol)
+                    storeData()
+                    false
+                }
+        }
+    }
+
+    private fun storeData() {
+        val sharedPreferences =
+            requireContext().getSharedPreferences("watchlist", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        val gson = Gson()
+        val json = gson.toJson(watchList)
+        editor.putString("watchlist", json)
+        editor.apply()
+    }
+
+    private fun readData() {
+        val sharedPreferences =
+            requireContext().getSharedPreferences("watchlist", Context.MODE_PRIVATE)
+        val gson = Gson()
+        val json = sharedPreferences.getString("watchlist", ArrayList<String>().toString())
+        val type = object : TypeToken<ArrayList<String>>() {}.type
+        watchList = gson.fromJson(json, type)
     }
 
     private fun setButtonOnClick(item: CryptoCurrency) {
@@ -124,7 +181,7 @@ class DetailsFragment : Fragment() {
         binding.detaillChartWebView.setLayerType(View.LAYER_TYPE_SOFTWARE, null)
         binding.detaillChartWebView.loadUrl(
             "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_76d87&symbol" + item.symbol
-                .toString() + "USD&interval="+s +"&hidesidetoolbar=1&hidetoptoolbar=1&symboledit=1&saveimage=1&toolbarbg=" +
+                .toString() + "USD&interval=" + s + "&hidesidetoolbar=1&hidetoptoolbar=1&symboledit=1&saveimage=1&toolbarbg=" +
                     "F1F3F6&studies=[]&hideideas=1&theme=Dark&style=1&timezone=Etc%2FUTC&studies_overrides={}&overrides={}&enabled_features=" +
                     "[]&disabled_features=[]&locale=en&utm_source=coinmarketcap.com&utm_medium=widget&utm_campaign=chart&utm_term=BTCUSDT"
         )

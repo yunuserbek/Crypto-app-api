@@ -11,6 +11,7 @@ import com.example.cryptoappapi.R
 import com.example.cryptoappapi.databinding.CurrencyItemLayoutBinding
 import com.example.cryptoappapi.fragment.HomeFragmentDirections
 import com.example.cryptoappapi.fragment.MarketFragmentDirections
+import com.example.cryptoappapi.fragment.WatchListFragmentDirections
 import com.example.cryptoappapi.models.CryptoCurrency
 
 class MarketAdapter(var context: Context, var list: List<CryptoCurrency>, var type: String) :
@@ -62,6 +63,11 @@ class MarketAdapter(var context: Context, var list: List<CryptoCurrency>, var ty
             }else if (type == "market"){
                 Navigation.findNavController(it).navigate(
                     MarketFragmentDirections.actionMarketFragment2ToDetailsFragment(item)
+                )
+
+            }else{
+                Navigation.findNavController(it).navigate(
+                    WatchListFragmentDirections.actionWatchlistFragmentToDetailsFragment(item)
                 )
 
             }
